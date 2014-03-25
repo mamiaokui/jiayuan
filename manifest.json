@@ -1,0 +1,15 @@
+{
+  "name": "jia yuan helper",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "get girl automatically",
+  "content_scripts": [{
+    "matches": ["http://www.jiayuan.com/*"],
+    "js": ["close.js"],
+    "run_at": "document_end"
+  }],
+  "icons": {
+    "48": "images/48.png",
+    "128": "images/128.png"
+  }
+}
