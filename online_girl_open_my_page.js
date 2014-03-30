@@ -1,8 +1,8 @@
 window.localStorage.clear();
 
-document.body.girlNum                                     = 700;   //how many girl you want to collect.
+document.body.girlNum                                     = 300;   //how many girl you want to collect.
 document.body.openGirlTime                                = 3000;  //how much time you want to open a girl window
-document.body.needsOpenWindow                             = 1;  //if needs open girl window, result will not be saved.
+document.body.needsOpenWindow                             = 3;  //if needs open girl window, result will not be saved.
 
 
 
@@ -21,12 +21,16 @@ function foo()
         window.localStorage.result = result;
         return;
     }
-    window.open("http://www.jiayuan.com/"+localStorage.key(document.body.index), '_blank', 'width=400,height=300');
-    document.body.index++;
-    if (document.body.index >= document.body.girlNum)
-        return;
     else
-        setTimeout(foo, document.body.openGirlTime);    
+    {
+        for (var i = 0; i < document.body.needsOpenWindow; i++)
+            window.open("http://www.jiayuan.com/"+localStorage.key(document.body.index), '_blank', 'width=100,height=100');
+        document.body.index++;
+        if (document.body.index >= document.body.girlNum)
+            return;
+        else
+            setTimeout(foo, document.body.openGirlTime);    
+    }
 }
 
 
